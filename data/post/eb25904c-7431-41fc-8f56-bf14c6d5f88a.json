@@ -1,0 +1,14 @@
+{
+  "_id": "eb25904c-7431-41fc-8f56-bf14c6d5f88a",
+  "content": {
+    "html": "\u003ch2\u003eIntroduction\u003c/h2\u003e\u003cp\u003eThis is sample HTML content.\u003c/p\u003e",
+    "markdown": "## Introduction\n\nThis is sample markdown content.",
+    "text": "This is sample plain text content."
+  },
+  "featured_image": "https://images.unsplash.com/photo-1500000903703?w=800",
+  "published_at": "2025-07-30",
+  "slug": "slug",
+  "status": "Archived",
+  "tags": "Business",
+  "title": "Sample post"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": "20d98bb2-607b-4a10-b25e-29a2702a67c2",
+  "content": {
+    "html": "\u003ch2\u003eIntroduction\u003c/h2\u003e\u003cp\u003eThis is sample HTML content.\u003c/p\u003e",
+    "markdown": "## Introduction\n\nThis is sample markdown content.",
+    "text": "This is sample plain text content."
+  },
+  "featured_image": "https://images.unsplash.com/photo-1500000376287?w=800",
+  "published_at": "2024-06-09",
+  "slug": "slug",
+  "status": "Published",
+  "tags": "Technology",
+  "title": "Amazing post"
+}

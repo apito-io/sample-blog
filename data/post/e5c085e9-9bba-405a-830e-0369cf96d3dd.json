@@ -1,0 +1,14 @@
+{
+  "_id": "e5c085e9-9bba-405a-830e-0369cf96d3dd",
+  "content": {
+    "html": "\u003ch2\u003eIntroduction\u003c/h2\u003e\u003cp\u003eThis is sample HTML content.\u003c/p\u003e",
+    "markdown": "## Introduction\n\nThis is sample markdown content.",
+    "text": "This is sample plain text content."
+  },
+  "featured_image": "https://images.unsplash.com/photo-1500000879898?w=800",
+  "published_at": "2025-01-11",
+  "slug": "slug",
+  "status": "Draft",
+  "tags": "Travel",
+  "title": "Complete post Guide"
+}

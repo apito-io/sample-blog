@@ -1,0 +1,14 @@
+{
+  "_id": "9e5865a1-c4e1-4723-a314-cce383aae1ed",
+  "content": {
+    "html": "\u003ch2\u003eIntroduction\u003c/h2\u003e\u003cp\u003eThis is sample HTML content.\u003c/p\u003e",
+    "markdown": "## Introduction\n\nThis is sample markdown content.",
+    "text": "This is sample plain text content."
+  },
+  "featured_image": "https://images.unsplash.com/photo-1500000497357?w=800",
+  "published_at": "2024-02-08",
+  "slug": "slug",
+  "status": "Draft",
+  "tags": "Lifestyle",
+  "title": "Sample post"
+}

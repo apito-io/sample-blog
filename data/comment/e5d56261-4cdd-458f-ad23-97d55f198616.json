@@ -1,0 +1,7 @@
+{
+  "_id": "e5d56261-4cdd-458f-ad23-97d55f198616",
+  "author_email": "john@example.com",
+  "author_name": "Sarah Wilson",
+  "content": "This is sample multiline content.",
+  "status": "Approved"
+}

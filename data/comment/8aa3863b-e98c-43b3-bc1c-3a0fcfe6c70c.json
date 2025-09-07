@@ -1,0 +1,7 @@
+{
+  "_id": "8aa3863b-e98c-43b3-bc1c-3a0fcfe6c70c",
+  "author_email": "john@example.com",
+  "author_name": "Mike Johnson",
+  "content": "This is sample multiline content.",
+  "status": "Rejected"
+}
