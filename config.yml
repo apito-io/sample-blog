@@ -1,0 +1,79 @@
+# Apito Engine Sample Project Configuration
+# Repository: https://github.com/apito-io/sample-blog
+
+name: "Blog CMS"
+slug: "sample-blog"
+description: "A complete blog content management system with posts, categories, tags, and user management"
+project_type: "general" # general | saas
+version: "1.0.0"
+
+# Repository Information
+repository:
+  url: "https://github.com/apito-io/sample-blog"
+  organization: "apito-io"
+  assets:
+    cover_image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800"
+    icon: "📝"
+    logo: ""
+
+# Schema Information
+schema:
+  models_count: 6
+  relationships_count: 8
+
+# Demo Data
+data:
+  folder_structure: "data/"
+  total_files: 93
+  models:
+    post:
+      count: 30
+      folder: "data/post/"
+      relation_format: "has_one: id (string), has_many: ids (array)"
+    category:
+      count: 10
+      folder: "data/category/"
+      relation_format: "has_many: ids (array)"
+    comment:
+      count: 50
+      folder: "data/comment/"
+      relation_format: "has_one: id (string)"
+  relation_files: 3
+  uuid_based_filenames: true
+
+# Project Metadata
+metadata:
+  category: "Content Management"
+  difficulty: "Beginner"
+  tags:
+    - "blog"
+    - "cms"
+    - "content-management"
+    - "publishing"
+    - "articles"
+    - "authors"
+    - "categories"
+  keywords:
+    - "blog system"
+    - "content management"
+    - "publishing platform"
+    - "article management"
+    - "category system"
+    - "tag system"
+    - "author management"
+  use_cases:
+    - "Personal blog"
+    - "Company blog"
+    - "News website"
+    - "Documentation site"
+    - "Multi-author platform"
+  key_features:
+    - "Multi-author support"
+    - "Category organization"
+    - "Tag system"
+    - "Media management"
+    - "Comment system"
+    - "User roles"
+    - "Complete sample data with relationships"
+    - "UUID-based data files"
+    - "Relationship mapping with relation.json files"
