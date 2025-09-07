@@ -1,0 +1,270 @@
+{
+  "id": "blog_cms",
+  "name": "Blog CMS",
+  "description": "Content management system for blogs",
+  "schema": {
+    "models": [
+      {
+        "name": "post",
+        "fields": [
+          {
+            "identifier": "title",
+            "input_type": "string",
+            "field_type": "text",
+            "validation": { "required": true },
+            "serial": 1,
+            "label": "Title"
+          },
+          {
+            "identifier": "slug",
+            "input_type": "string",
+            "field_type": "text",
+            "validation": { "required": true, "unique": true },
+            "serial": 2,
+            "label": "Slug"
+          },
+          {
+            "identifier": "content",
+            "input_type": "string",
+            "field_type": "multiline",
+            "sub_field_info": [
+              {
+                "identifier": "html",
+                "input_type": "string",
+                "field_type": "text",
+                "parent_field": "content"
+              },
+              {
+                "identifier": "markdown",
+                "input_type": "string",
+                "field_type": "text",
+                "parent_field": "content"
+              },
+              {
+                "identifier": "text",
+                "input_type": "string",
+                "field_type": "text",
+                "parent_field": "content"
+              }
+            ],
+            "validation": { "required": true },
+            "serial": 3,
+            "label": "Content"
+          },
+          {
+            "identifier": "featured_image",
+            "input_type": "string",
+            "field_type": "media",
+            "sub_field_info": [
+              {
+                "identifier": "url",
+                "input_type": "string",
+                "field_type": "text",
+                "parent_field": "featured_image"
+              },
+              {
+                "identifier": "id",
+                "input_type": "string",
+                "field_type": "text",
+                "parent_field": "featured_image"
+              },
+              {
+                "identifier": "file_name",
+                "input_type": "string",
+                "field_type": "text",
+                "parent_field": "featured_image"
+              }
+            ],
+            "validation": {},
+            "serial": 4,
+            "label": "Featured Image"
+          },
+          {
+            "identifier": "status",
+            "input_type": "string",
+            "field_type": "list",
+            "validation": {
+              "fixed_list_elements": ["Draft", "Published", "Archived"]
+            },
+            "serial": 5,
+            "label": "Status"
+          },
+          {
+            "identifier": "tags",
+            "input_type": "string",
+            "field_type": "list",
+            "validation": {
+              "fixed_list_elements": [
+                "Technology",
+                "Business",
+                "Lifestyle",
+                "Travel"
+              ],
+              "is_multi_choice": true
+            },
+            "serial": 6,
+            "label": "Tags"
+          },
+          {
+            "identifier": "published_at",
+            "input_type": "string",
+            "field_type": "date",
+            "validation": {},
+            "serial": 7,
+            "label": "Published Date"
+          }
+        ],
+        "connections": [
+          {
+            "model": "category",
+            "relation": "has_one",
+            "type": "forward"
+          },
+          {
+            "model": "comment",
+            "relation": "has_many",
+            "type": "backward"
+          }
+        ],
+        "has_connections": true
+      },
+      {
+        "name": "category",
+        "fields": [
+          {
+            "identifier": "name",
+            "input_type": "string",
+            "field_type": "text",
+            "validation": { "required": true, "unique": true },
+            "serial": 1,
+            "label": "Category Name"
+          },
+          {
+            "identifier": "description",
+            "input_type": "string",
+            "field_type": "multiline",
+            "validation": {},
+            "serial": 2,
+            "label": "Description"
+          },
+          {
+            "identifier": "color",
+            "input_type": "string",
+            "field_type": "text",
+            "validation": {},
+            "serial": 3,
+            "label": "Color Code"
+          }
+        ],
+        "connections": [
+          {
+            "model": "post",
+            "relation": "has_many",
+            "type": "backward"
+          }
+        ],
+        "has_connections": true
+      },
+      {
+        "name": "comment",
+        "fields": [
+          {
+            "identifier": "author_name",
+            "input_type": "string",
+            "field_type": "text",
+            "validation": { "required": true },
+            "serial": 1,
+            "label": "Author Name"
+          },
+          {
+            "identifier": "author_email",
+            "input_type": "string",
+            "field_type": "text",
+            "validation": { "required": true },
+            "serial": 2,
+            "label": "Author Email"
+          },
+          {
+            "identifier": "content",
+            "input_type": "string",
+            "field_type": "multiline",
+            "validation": { "required": true },
+            "serial": 3,
+            "label": "Comment"
+          },
+          {
+            "identifier": "status",
+            "input_type": "string",
+            "field_type": "list",
+            "validation": {
+              "fixed_list_elements": ["Pending", "Approved", "Rejected"]
+            },
+            "serial": 4,
+            "label": "Status"
+          }
+        ],
+        "connections": [
+          {
+            "model": "post",
+            "relation": "has_one",
+            "type": "forward"
+          }
+        ],
+        "has_connections": true
+      }
+    ]
+  },
+  "settings": {
+    "locals": ["en"]
+  },
+  "roles": {
+    "admin": {
+      "system_generated": true,
+      "is_admin": true
+    },
+    "editor": {
+      "api_permissions": {
+        "post": {
+          "read": "all",
+          "create": "all",
+          "update": "all",
+          "delete": "all"
+        },
+        "category": {
+          "read": "all",
+          "create": "all",
+          "update": "all",
+          "delete": "all"
+        },
+        "comment": {
+          "read": "all",
+          "create": "none",
+          "update": "all",
+          "delete": "all"
+        }
+      }
+    },
+    "public": {
+      "api_permissions": {
+        "post": {
+          "read": "all",
+          "create": "none",
+          "update": "none",
+          "delete": "none"
+        },
+        "category": {
+          "read": "all",
+          "create": "none",
+          "update": "none",
+          "delete": "none"
+        },
+        "comment": {
+          "read": "all",
+          "create": "all",
+          "update": "none",
+          "delete": "none"
+        }
+      }
+    }
+  }
+}
